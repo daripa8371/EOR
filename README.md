@@ -1,5 +1,4 @@
 # TransPore Version 1.0  
-Date: 01/25/2017
 
 A FEM-FDM solver for two-phase, multicomponent transport in porous media
 
@@ -8,16 +7,15 @@ A FEM-FDM solver for two-phase, multicomponent transport in porous media
 
 Requirements: MATLAB 2017a or higher, Windows/Linux/MacOS
 
-E-mail: sdutta.math@gmail.com, daripa@math.tamu.edu
+E-mail: daripa@tamu.edu, Sourav.Dutta@erdc.dren.mil
 
-Copyright 2010-2018 TransPore developers and contributors. All rights reserved.
+Copyright (c) 2020 Prabir Daripa and Sourav Dutta
 
 References: 
 
-Daripa, P. & Dutta, S. (2017) Modeling and simulation of surfactant–polymer flooding using a new hybrid method. J. Comput. Phys., 335, 249–282.
-https://doi.org/10.1016/j.jcp.2017.01.038
+Daripa, P. & Dutta, S. (2017) Modeling and simulation of surfactant-polymer flooding using a new hybrid method. Journal of Computational Phyics., 335, 249-282. https://doi.org/10.1016/j.jcp.2017.01.038
 
-Daripa, P. & Dutta, S. (2017) Convergence analysis of a characteristics-based hybrid method for multicomponent transport in porous media, arXiv:1707.00035v1 [math.NA], 1–30.
+Daripa, P., & Dutta, S. (2019). On the convergence analysis of a hybrid numerical method for multicomponent transport in porous media. Applied Numerical Mathematics, 146, 199¿220. https://doi.org/10.1016/j.apnum.2019.07.009
 
 Funding for this research was provided by:
 Qatar National Research Fund (08-777-1-141),
