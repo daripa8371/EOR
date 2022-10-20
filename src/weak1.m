@@ -11,11 +11,10 @@ function out = weak1(T,beta,v)
 
 % Computing area of the triangle formed by T
 s = polyarea(T.x,T.y); 
-% M = matrix where 1st column is x coordinate of element triangle, 2nd column is y coord of elem. triangle and 3rd column is filled with 1's
-M = [T.x', T.y', [1;1;1]]; 
-M = M^(-1); % finding inverse of the original matrix M (3x3)
-M = M([1,2],:); % extracting the first two rows of M to make it 2x3 matrix
-vdiff = M*v';  % multiplying M (2x3) with transpose of v (3x1) to get vdiff (2x1)
+M = [T.x', T.y', [1;1;1]];
+M = M^(-1);
+M = M([1,2],:);
+vdiff = M*v';
 inte= vdiff'*beta*M*s;
 out = [inte,0];
 end

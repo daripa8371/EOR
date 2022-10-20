@@ -1,5 +1,5 @@
 function out = setRightHand(para,fmatrix,U, L)
-% evaluating source term f at the vertices of the element triangle
+
 m = para.box.m;
 n = para.box.n;
 	

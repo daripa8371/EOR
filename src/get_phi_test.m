@@ -3,12 +3,8 @@
 % Evaluate the level set function on the grid points
 % Negative output signifies the domain $$\Omega^-$$.
 % Positive output signifies the domain $$\Omega^+$$.
-% flag = 1 means Quarter five spot flood
-% flag = 2 means HS flood
-% flag = 3 means Five-spot parallel flood
-% flag = 4 means Five-spot diagonal flood
-function out=get_phi_test(para,flag)
 
+function out=get_phi_test(para)
 
 
 m = para.box.m;
@@ -32,17 +28,9 @@ bottom = para.box.bottom;
 %-------------------
 
 % --- Vectorized implementation
-[ii,jj] = meshgrid(1:m+1,1:n+1);
-if flag == 1
-    get_phi = z_func_test(left+(ii-1)*dx, bottom+(jj-1)*dy);
-elseif flag == 2
-    get_phi = z_func_test_hs(left+(ii-1)*dx, bottom+(jj-1)*dy);
-elseif flag == 3
-    get_phi = z_func_test_parallel(left+(ii-1)*dx, bottom+(jj-1)*dy);
-elseif flag == 4
-    get_phi = z_func_test_diagonal(left+(ii-1)*dx, bottom+(jj-1)*dy);
+[jj,ii] = meshgrid(1:n+1,1:m+1);
+get_phi = z_func_test(left+(ii-1)*dx, bottom+(jj-1)*dy);
 
-end
 %-------
 
 out=get_phi;

@@ -2,16 +2,15 @@ function [s0,c0,g0]=s0c0(para,phi,s_0,c_0,g_0,flag)
 % function to initialize s,c,g in the domain
 % flag = 0 is no surfactant
 % flag = 1 is with surfactant
-% flag = 2 is for reverse fingering simulation
 % 1-s0 = initial residual saturation 
 % c0 = concentration of polymer in injected mixture
 % g0 = concentration of surfactant in injected mixture
 
-global sor0;
 %%% Vectorized implementation
     s0=zeros(para.box.n+1,para.box.m+1);
     c0=s0;
     D = (phi>10^(-10))+(abs(phi)<10^(-10));
+    
 %     if flag ==0
 %         g0=[];
 %         s0=(1-s_0)*ones(para.box.n+1,para.box.m+1);
@@ -20,24 +19,19 @@ global sor0;
 %         g0=c0;
 %     end
 %     
-s1 = 1 - sor0-sor0*0.1; % 
+    
     if flag ==0
-        s0=~D.*s1+(D).*(1-s_0); %(1-s_0)*ones(para.box.n+1,para.box.m+1);%
+        g0=[];
+        s0=(~D)+D.*(1-s_0);
         c0=(~D).*c_0;
-        g0=(~D).*g_0;
     elseif flag == 1
-        s0=(~D).*s1+D.*(1-s_0);
+        s0=(~D)+D.*(1-s_0);
         c0=(~D).*c_0;
-        g0=(~D).*g_0;
-    elseif flag == 2
-        s0=(~D).*s1+D.*(1-s_0);
-        c0=set_c0_rev_fing(para,phi,c_0);
         g0=(~D).*g_0;
     end
-
     
     
-%%% For-loop implementation %%%%%%%%%
+%%% For loop implementation %%%%%%%%%
 
 %     s0=zeros(para.box.n+1,para.box.m+1);
 %     c0=s0;

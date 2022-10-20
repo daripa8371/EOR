@@ -97,7 +97,7 @@ for j = 1:(m+1)
 		grid.e = t1(2) + t6(1);
 		grid.nw = t2(2) + t3(3);
 		grid.se = t5(2) + t6(3);
-		grid.const = t1(4) +t2(4) +t3(4) +t4(4) +t5(4) +t6(4); % = always zero?
+		grid.const = t1(4) +t2(4) +t3(4) +t4(4) +t5(4) +t6(4);
 %         disp(grid)
 		out{j,l} = grid;
 %         pause

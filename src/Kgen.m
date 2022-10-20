@@ -1,6 +1,5 @@
-%% program to create a log-normal permeability field suitable for
+%program to create a log-normal permeability field suitable for
 %representing multiscale heterogeneity in porous media
-%%
 
 clc
 clear variables
@@ -9,7 +8,7 @@ clear variables
 x = 1:8:64;
 y = 1:8:64;
 [X,Y] = meshgrid(x,y);
-[XX,YY] = meshgrid(1:32);
+[XX,YY] = meshgrid(1:64);
 
 %    Initializing constants \beta 
 beta1 = 0.5;
@@ -38,16 +37,9 @@ end
 
                 
 %    Simulating Gaussian field with mean = 0 and covariance = sigma
-R = mvnrnd(zeros(1, n*n),Sigma, n*n); R32 = R(1:32,1:32);
+R = mvnrnd(zeros(1, n*n),Sigma, n*n);
+
 %    Using pseudocolor plotting function to plot the Gaussian field
-figure(50); pcolor(R32); shading interp; colormap jet; colorbar; title('Gaussian field')
-export_fig 'Kraster32new.pdf' '-opengl'
-%    Computing permeability from the Gaussian field
-k0 = 3.4253; varphi = 1;
-KK = k0*exp(varphi*R); KK = 100*KK; KK = KK(1:32,1:32); 
-save K32new.mat
-% Plotting permeability
-figure(51)
-surf(XX,YY,log(KK)); shading interp; colorbar; title('Random permeability field')
-xlim([0 32]); ylim([0 32]); colormap jet;
-export_fig 'KK32new.pdf' '-opengl'
+pcolor(R)
+surf(XX,YY,R);
+%export_fig KK64.pdf

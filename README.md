@@ -1,6 +1,7 @@
-# TransPore Version 1.0  
+# TransPore Version 1.1  
 
-A FEM-FDM solver for two-phase, multicomponent transport in porous media
+A FEM-FDM solver for two-phase, multicomponent transport in porous media with data driven non-Newtonian viscosity calculation for polymer.
+
 
 ## GENERAL USAGE NOTES
 =====================
@@ -9,7 +10,7 @@ Requirements: MATLAB 2017a or higher, Windows/Linux/MacOS
 
 E-mail: daripa@tamu.edu, Sourav.Dutta@erdc.dren.mil
 
-Copyright (c) 2020 Prabir Daripa and Sourav Dutta
+Copyright (c) 2020 Prabir Daripa, Sourav Dutta and Rohit Mishra
 
 References: 
 

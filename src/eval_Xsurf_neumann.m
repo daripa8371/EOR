@@ -14,18 +14,18 @@ if flag ==1
     xjump = x-f_s.*u.*dt;
     yjump = y-f_s.*v.*dt;
     
-elseif flag == 2 || flag == 3
+elseif flag == 2
     [sx,sy] = get_gra(s,para);
     [gx,gy] = get_gra(g,para);
     
     xjump = x-((f./snew).*u + (D.*pc_s./snew).*sx + (D.*pc_g./snew).*gx).*dt;
     yjump = y-((f./snew).*v + (D.*pc_s./snew).*sy + (D.*pc_g./snew).*gy).*dt;
     
-% elseif flag ==3
-%     [sx,sy] = get_gra(s,para);
-%     
-%     xjump = x-((f./snew).*u + (D.*pc_s./snew).*sx).*dt;
-%     yjump = y-((f./snew).*v + (D.*pc_s./snew).*sy).*dt;
+elseif flag ==3
+    [sx,sy] = get_gra(s,para);
+    
+    xjump = x-((f./snew).*u + (D.*pc_s./snew).*sx).*dt;
+    yjump = y-((f./snew).*v + (D.*pc_s./snew).*sy).*dt;
    
 end
 
@@ -54,6 +54,7 @@ end
     out1 = xmod;
     out2 = ymod;
     
+
 
 % if flag ==1
 % 
